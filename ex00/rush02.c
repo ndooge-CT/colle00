@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -16,29 +15,29 @@ void	ft_putchar(char c);
 void	rush(int x, int y)
 {
 
-	int	x_it;
-	int	y_it;
+	int	wp;
+	int	hp;
 
-	y_it	= 0;
-	while(y_it < y)
+	hp	= 0;
+	while(hp < y)
 	{
-		x_it = 0;
-		while (x_it < x)
+		wp = 0;
+		while (wp < x)
 		{
-			if((y_it == 0 && x_it == 0) ||
-					(y_it == 0 && x_it == x - 1))
+			if((hp == 0 && wp == 0) ||
+					(hp == 0 && wp == x - 1))
 				ft_putchar('A');
-			else if ((y_it == y - 1 && x_it == 0) || 
-					(y_it == y -1 && x_it == x - 1))
+			else if ((hp == y - 1 && wp == 0) || 
+					(hp == y -1 && wp == x - 1))
 				ft_putchar('C');
-			else if ((x_it == 0 || x_it == x - 1) ||
-					(y_it == 0 || y_it == x - 1))
+			else if ((wp == 0 || wp == x - 1) ||
+					(hp == 0 || hp == x - 1))
 				ft_putchar('B');
 			else
 				ft_putchar(' ');
-			x_it++;
+			wp++;
 		}
 		ft_putchar('\n');
-		y_it++;
+		hp++;
 	}
 }

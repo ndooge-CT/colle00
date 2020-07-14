@@ -13,28 +13,26 @@ void	ft_putchar(char c);
 
 void	rush(int x, int y)
 {
-	int	w;
-	int	h;
-	
-	w = x;
-	h = y;
-	y = 1;
-	while (y <= h)
+	int	wp;
+	int	hp;
+
+	hp = 1;
+	while (hp <= y)
 	{
-		x = 1;
-		while (x <= w)
+		wp = 1;
+		while (wp <= x)
 		{
-			if ((x < 2 && y < 2) || (x == w && y == h && y > 1 && x > 1))
+			if ((wp < 2 && hp < 2) || (wp == x && hp == y && hp > 1 && wp > 1))
 				ft_putchar('A');
-			else if (x > 1 && x < w && y > 1 && y < h)
+			else if (wp > 1  && wp < x && hp > 1 && hp < y)
 				ft_putchar(' ');
-			else if ((x == 1 && y == h) || (x == w && y == 1))
+			else if ((wp == 1 && hp == y) || (wp == x && hp == 1))
 				ft_putchar('C');
 			else
 				ft_putchar('B');
-			x++;
+			wp++;
 		}
 		ft_putchar('\n');
-		y++;
+		hp++;
 	}
 }
